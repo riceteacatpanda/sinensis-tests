@@ -1,5 +1,5 @@
 # sinensis-tests
-Tests for the Sinensis API
+Tests for the Sinensis API to determine which technology is best to use
 
 ### Test points
 
