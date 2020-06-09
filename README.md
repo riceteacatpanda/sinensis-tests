@@ -39,6 +39,8 @@ Any JWT token that is generated should have the claim `"foo":"bar"` and `"nbf":1
 
 SQL user/password is `st-user`/`st-user`.
 
+SQL database should be on `localhost:3306`.
+
 SQL tests should use a parameterised query.
 
 SQL insert should insert into database `sinensis-test`, table `inserttest`, column `number` with a random number between 1 and 100.
@@ -70,4 +72,16 @@ Python
  sql/select/: 0.02050506114959717 seconds per request
 Average time per request: 0.020968949794769286
 ```
+
+### Start commands for individual services
+
+* Go: `cd go-api; go run main.go`
+* JavaScript: `cd node-api; node index.js`
+* Python: `cd python-api; pipenv run app`
+
+### Test command
+
+*All services must be started as well as a MySQL database prior to running the test script*
+
+`cd tester; pipenv run python main.py`
 
