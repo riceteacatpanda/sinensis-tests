@@ -53,10 +53,10 @@ func main() {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/jwt/generate", jwtGenerate)
-	r.HandleFunc("/jwt/read", jwtRead)
-	r.HandleFunc("/sql/insert", sqlInsert)
-	r.HandleFunc("/sql/select", sqlSelect)
+	r.HandleFunc("/jwt/generate/", jwtGenerate)
+	r.HandleFunc("/jwt/read/", jwtRead)
+	r.HandleFunc("/sql/insert/", sqlInsert)
+	r.HandleFunc("/sql/select/", sqlSelect)
 
 	log.Fatal(http.ListenAndServe(":8000", r))
 }
