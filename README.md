@@ -36,3 +36,9 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJuYmYiOjE1OTE2OTgxMjR9.fp
 ```
 
 Any JWT token that is generated should have the claim `"foo":"bar"` and `"nbf":1591698124`.
+
+SQL tests should use a parameterised query.
+
+SQL insert should insert into database `sinensis-test`, table `inserttest`, column `number` with a random number between 1 and 100.
+
+SQL read should read from the database `sinensis-test`, table `readtest`.
