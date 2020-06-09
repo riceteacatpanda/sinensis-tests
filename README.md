@@ -10,7 +10,7 @@ Tests for the Sinensis API to determine which technology is best to use
 
 ### Methodology
 
-An API is run on the local machine and a Python script runs 50-100 requests against each endpoint, timing the length of time it takes for each to return. These are then averaged.
+An API is run on the local machine and a Python script runs 50 requests against each endpoint, timing the length of time it takes for each to return. These are then averaged.
 
 ### Endpoints
 
@@ -44,3 +44,30 @@ SQL tests should use a parameterised query.
 SQL insert should insert into database `sinensis-test`, table `inserttest`, column `number` with a random number between 1 and 100.
 
 SQL read should read from the database `sinensis-test`, table `readtest`.
+
+### Results
+
+```
+--- RESULTS ---
+Golang
+ jwt/generate/: 0.02212080955505371 seconds per request
+ jwt/read/: 0.010511775016784668 seconds per request
+ sql/insert/: 0.011090307235717774 seconds per request
+ sql/select/: 0.009773812294006347 seconds per request
+Average time per request: 0.013374176025390625
+
+JavaScript
+ jwt/generate/: 0.01930830955505371 seconds per request
+ jwt/read/: 0.01633559226989746 seconds per request
+ sql/insert/: 0.019347538948059084 seconds per request
+ sql/select/: 0.018669567108154296 seconds per request
+Average time per request: 0.018415251970291136
+
+Python
+ jwt/generate/: 0.02579103946685791 seconds per request
+ jwt/read/: 0.015957350730895995 seconds per request
+ sql/insert/: 0.021622347831726074 seconds per request
+ sql/select/: 0.02050506114959717 seconds per request
+Average time per request: 0.020968949794769286
+```
+
