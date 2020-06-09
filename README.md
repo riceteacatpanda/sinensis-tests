@@ -3,8 +3,8 @@ Tests for the Sinensis API
 
 ### Test points
 
-* Test JWT asymmetric token generation
-* Test JWT asymmetric token read
+* Test JWT RS256 token generation
+* Test JWT RS256 token read
 * Test SQL insert
 * Test SQL read
 
@@ -17,7 +17,7 @@ An API is run on the local machine and a Python script runs 50-100 requests agai
 * `/jwt/generate`
 * `/jwt/read`
 * `/sql/insert`
-* `/sql/read`
+* `/sql/select`
 
 ### Libraries
 
