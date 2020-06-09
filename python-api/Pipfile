@@ -7,8 +7,9 @@ verify_ssl = true
 
 [packages]
 flask = "*"
-mysql-connector-python = "*"
+mysql-connector-python = "==8.0.12"
 pyjwt = {extras = ["crypto"], version = "*"}
+flask-mysql = "*"
 
 [requires]
 python_version = "3.8"

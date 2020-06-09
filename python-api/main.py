@@ -2,18 +2,21 @@ import flask
 import jwt
 import json
 import random
-import mysql.connector
+import mysql.connector.pooling
+import time
 
 PUBLIC_KEY = open("../public.key", "rb").read()
 PRIVATE_KEY = open("../private.key", "rb").read()
 
 app = flask.Flask(__name__)
 
-dbConn = mysql.connector.connect(
+dbPool = mysql.connector.pooling.MySQLConnectionPool(
   host="localhost",
   user="st-user",
   password="st-user",
-  database="sinensis-test"
+  database="sinensis-test",
+  pool_name="masterpool",
+  pool_size=10
 )
 
 
@@ -40,10 +43,13 @@ def readJwt():
 
 @app.route("/sql/select/")
 def selectSql():
-  cursor = dbConn.cursor(prepared=True)
-  cursor.execute("SELECT age FROM readtest WHERE id = %s", [1])
+  con = dbPool.get_connection()
+  cursor = con.cursor(prepared=True)
+  cursor.execute("SELECT age FROM readtest WHERE id = %s", (1,))
   db_resp = cursor.fetchall()
   cursor.close()
+
+  con.close()
 
   resp = flask.Response(json.dumps({"status": "ok", "token": db_resp[0][0]}))
   resp.headers["Content-Type"] = "application/json"
@@ -53,11 +59,14 @@ def selectSql():
 @app.route("/sql/insert/")
 def insertSql():
   rand = random.randint(0, 100)
-  
-  cursor = dbConn.cursor(prepared=True)
-  cursor.execute("INSERT INTO inserttest (`number`) VALUES( %s )", [rand])
-  dbConn.commit()
+
+  con = dbPool.get_connection()
+  cursor = con.cursor(prepared=True)
+  cursor.execute("INSERT INTO inserttest (`number`) VALUES( %s )", (rand,))
+  con.commit()
   cursor.close()
+
+  con.close()
 
   resp = flask.Response(json.dumps({"status": "ok", "number": rand}))
   resp.headers["Content-Type"] = "application/json"
