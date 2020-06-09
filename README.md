@@ -21,11 +21,11 @@ An API is run on the local machine and a Python script runs 50 requests against 
 
 ### Libraries
 
-**Go** - Mux, [dgrijalva/jwt-go](https://github.com/dgrijalva/jwt-go)
+**Go** - Mux, [dgrijalva/jwt-go](https://github.com/dgrijalva/jwt-go), built in SQL library
 
-**Python** - Flask, PyJWT
+**Python** - Flask, PyJWT, `mysql.connector`
 
-**Node.JS** - Express.JS, jsonwebtoken
+**Node.JS** - Express.JS, `jsonwebtoken`, `mysql`
 
 ### Bits of data
 
@@ -84,4 +84,3 @@ Average time per request: 0.020968949794769286
 *All services must be started as well as a MySQL database prior to running the test script*
 
 `cd tester; pipenv run python main.py`
-
