@@ -3,6 +3,7 @@ package main
 import (
 	"crypto/rsa"
 	"database/sql"
+	"encoding/json"
 	"io/ioutil"
 	"log"
 	"math/rand"
@@ -67,11 +68,17 @@ func jwtRead(w http.ResponseWriter, r *http.Request) {
 	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 		return pubKey, nil
 	})
+	checkError(err)
 
+	returnData := map[string]interface{}{
+		"status":     "ok",
+		"validToken": strconv.FormatBool(token.Valid),
+	}
+	jsonData, err := json.Marshal(returnData)
 	checkError(err)
 
 	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte("{'status':'ok', 'validToken':'" + strconv.FormatBool(token.Valid) + "'}"))
+	w.Write([]byte(jsonData))
 
 }
 
@@ -85,8 +92,15 @@ func jwtGenerate(w http.ResponseWriter, r *http.Request) {
 	tokenString, err := token.SignedString(privKey)
 	checkError(err)
 
+	returnData := map[string]interface{}{
+		"status": "ok",
+		"token":  tokenString,
+	}
+	jsonData, err := json.Marshal(returnData)
+	checkError(err)
+
 	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte("{'status':'ok','key':" + tokenString + "'}")) // the best way to create a JSON response, obviously
+	w.Write([]byte(jsonData))
 
 }
 
@@ -101,8 +115,15 @@ func sqlInsert(w http.ResponseWriter, r *http.Request) {
 	_, err = preparedStatement.Exec(rNum)
 	checkError(err)
 
+	returnData := map[string]interface{}{
+		"status": "ok",
+		"number": strconv.FormatInt(int64(rNum), 10),
+	}
+	jsonData, err := json.Marshal(returnData)
+	checkError(err)
+
 	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte("{'status':'ok','number':" + strconv.FormatInt(int64(rNum), 10) + "}"))
+	w.Write([]byte(jsonData))
 
 }
 
@@ -116,7 +137,14 @@ func sqlSelect(w http.ResponseWriter, r *http.Request) {
 	err = preparedStatement.QueryRow(1).Scan(&outputVal)
 	checkError(err)
 
+	returnData := map[string]interface{}{
+		"status": "ok",
+		"age":    strconv.FormatInt(int64(outputVal), 10),
+	}
+	jsonData, err := json.Marshal(returnData)
+	checkError(err)
+
 	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte("{'status':'ok','age':" + strconv.FormatInt(int64(outputVal), 10) + "}"))
+	w.Write([]byte(jsonData))
 
 }
