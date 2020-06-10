@@ -127,6 +127,58 @@ Python
 Average time per request: 0.016907951682806014 seconds
 ```
 
+**1000 requests per endpoint**
+
+```
+--- RESULTS ---
+Golang
+ jwt/generate/: 0.023944092988967894 seconds per request
+ jwt/read/: 0.010461218595504761 seconds per request
+ sql/insert/: 0.013272780656814575 seconds per request
+ sql/select/: 0.011111929893493652 seconds per request
+Average time per request: 0.014697505533695221 seconds
+
+JavaScript
+ jwt/generate/: 0.021845391511917115 seconds per request
+ jwt/read/: 0.02035905146598816 seconds per request
+ sql/insert/: 0.022200391054153442 seconds per request
+ sql/select/: 0.021196373224258422 seconds per request
+Average time per request: 0.021400301814079283 seconds
+
+Python
+ jwt/generate/: 0.024537539958953858 seconds per request
+ jwt/read/: 0.014199618577957153 seconds per request
+ sql/insert/: 0.02001341438293457 seconds per request
+ sql/select/: 0.018767702102661134 seconds per request
+Average time per request: 0.01937956875562668 seconds
+```
+
+**10,000 requests per endpoint**
+
+```
+--- RESULTS ---
+Golang
+ jwt/generate/: 0.016423852467536925 seconds per request
+ jwt/read/: 0.006015836048126221 seconds per request
+ sql/insert/: 0.007644516229629516 seconds per request
+ sql/select/: 0.006612047123908997 seconds per request
+Average time per request: 0.009174062967300415 seconds
+
+JavaScript
+ jwt/generate/: 0.014682369685173035 seconds per request
+ jwt/read/: 0.012418719816207886 seconds per request
+ sql/insert/: 0.015203924441337585 seconds per request
+ sql/select/: 0.01483659222126007 seconds per request
+Average time per request: 0.014285401540994645 seconds
+
+Python
+ jwt/generate/: 0.013394786834716796 seconds per request
+ jwt/read/: 0.005096484971046447 seconds per request
+ sql/insert/: 0.0320754653930664 seconds per request
+ sql/select/: 0.030087527966499328 seconds per request
+Average time per request: 0.020163566291332244 seconds
+```
+
 ### Start commands for individual services
 
 * Go: `cd go-api; go run main.go`
