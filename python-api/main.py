@@ -4,6 +4,10 @@ import json
 import random
 import mysql.connector.pooling
 import time
+import logging
+
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 PUBLIC_KEY = open("../public.key", "rb").read()
 PRIVATE_KEY = open("../private.key", "rb").read()
