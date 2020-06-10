@@ -49,6 +49,8 @@ SQL read should read from the database `sinensis-test`, table `readtest`.
 
 ### Results
 
+**50 requests per endpoint**
+
 ```
 --- RESULTS ---
 Golang
@@ -71,6 +73,58 @@ Python
  sql/insert/: 0.021622347831726074 seconds per request
  sql/select/: 0.02050506114959717 seconds per request
 Average time per request: 0.020968949794769286
+```
+
+**200 requests per endpoint**
+
+```
+--- RESULTS ---
+Golang
+ jwt/generate/: 0.021033886671066284 seconds per request
+ jwt/read/: 0.009684100151062011 seconds per request
+ sql/insert/: 0.010322383642196654 seconds per request
+ sql/select/: 0.009639184474945068 seconds per request
+Average time per request: 0.012669888734817504 seconds
+
+JavaScript
+ jwt/generate/: 0.018934531211853026 seconds per request
+ jwt/read/: 0.017024459838867186 seconds per request
+ sql/insert/: 0.018979417085647585 seconds per request
+ sql/select/: 0.018420594930648803 seconds per request
+Average time per request: 0.01833975076675415 seconds
+
+Python
+ jwt/generate/: 0.021557347774505617 seconds per request
+ jwt/read/: 0.01299025297164917 seconds per request
+ sql/insert/: 0.016695375442504882 seconds per request
+ sql/select/: 0.015782628059387207 seconds per request
+Average time per request: 0.01675640106201172 seconds
+```
+
+**400 requests per endpoint**
+
+```
+--- RESULTS ---
+Golang
+ jwt/generate/: 0.02097390055656433 seconds per request
+ jwt/read/: 0.00946717917919159 seconds per request
+ sql/insert/: 0.010075551867485046 seconds per request
+ sql/select/: 0.009664133191108704 seconds per request
+Average time per request: 0.012545191198587418 seconds
+
+JavaScript
+ jwt/generate/: 0.01850809872150421 seconds per request
+ jwt/read/: 0.01755066156387329 seconds per request
+ sql/insert/: 0.0185854172706604 seconds per request
+ sql/select/: 0.018144344091415406 seconds per request
+Average time per request: 0.018197130411863327 seconds
+
+Python
+ jwt/generate/: 0.02141772210597992 seconds per request
+ jwt/read/: 0.012745919227600098 seconds per request
+ sql/insert/: 0.01627397894859314 seconds per request
+ sql/select/: 0.01552843689918518 seconds per request
+Average time per request: 0.016491514295339585 seconds
 ```
 
 ### Start commands for individual services
