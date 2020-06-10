@@ -54,25 +54,25 @@ SQL read should read from the database `sinensis-test`, table `readtest`.
 ```
 --- RESULTS ---
 Golang
- jwt/generate/: 0.02212080955505371 seconds per request
- jwt/read/: 0.010511775016784668 seconds per request
- sql/insert/: 0.011090307235717774 seconds per request
- sql/select/: 0.009773812294006347 seconds per request
-Average time per request: 0.013374176025390625
+ jwt/generate/: 0.021885490417480467 seconds per request
+ jwt/read/: 0.010388288497924805 seconds per request
+ sql/insert/: 0.010767254829406738 seconds per request
+ sql/select/: 0.009490714073181153 seconds per request
+Average time per request: 0.01313293695449829 seconds
 
 JavaScript
- jwt/generate/: 0.01930830955505371 seconds per request
- jwt/read/: 0.01633559226989746 seconds per request
- sql/insert/: 0.019347538948059084 seconds per request
- sql/select/: 0.018669567108154296 seconds per request
-Average time per request: 0.018415251970291136
+ jwt/generate/: 0.023129725456237794 seconds per request
+ jwt/read/: 0.021802611351013183 seconds per request
+ sql/insert/: 0.024572420120239257 seconds per request
+ sql/select/: 0.020463895797729493 seconds per request
+Average time per request: 0.022492163181304932 seconds
 
 Python
- jwt/generate/: 0.02579103946685791 seconds per request
- jwt/read/: 0.015957350730895995 seconds per request
- sql/insert/: 0.021622347831726074 seconds per request
- sql/select/: 0.02050506114959717 seconds per request
-Average time per request: 0.020968949794769286
+ jwt/generate/: 0.027037138938903808 seconds per request
+ jwt/read/: 0.014032306671142579 seconds per request
+ sql/insert/: 0.024165077209472655 seconds per request
+ sql/select/: 0.0225894832611084 seconds per request
+Average time per request: 0.02195600152015686 seconds
 ```
 
 **200 requests per endpoint**
@@ -80,25 +80,25 @@ Average time per request: 0.020968949794769286
 ```
 --- RESULTS ---
 Golang
- jwt/generate/: 0.021033886671066284 seconds per request
- jwt/read/: 0.009684100151062011 seconds per request
- sql/insert/: 0.010322383642196654 seconds per request
- sql/select/: 0.009639184474945068 seconds per request
-Average time per request: 0.012669888734817504 seconds
+ jwt/generate/: 0.021664707660675048 seconds per request
+ jwt/read/: 0.009906940460205078 seconds per request
+ sql/insert/: 0.010605031251907348 seconds per request
+ sql/select/: 0.009961823225021363 seconds per request
+Average time per request: 0.01303462564945221 seconds
 
 JavaScript
- jwt/generate/: 0.018934531211853026 seconds per request
- jwt/read/: 0.017024459838867186 seconds per request
- sql/insert/: 0.018979417085647585 seconds per request
- sql/select/: 0.018420594930648803 seconds per request
-Average time per request: 0.01833975076675415 seconds
+ jwt/generate/: 0.019264423847198488 seconds per request
+ jwt/read/: 0.01824252724647522 seconds per request
+ sql/insert/: 0.01926470398902893 seconds per request
+ sql/select/: 0.018711960315704344 seconds per request
+Average time per request: 0.018870903849601744 seconds
 
 Python
- jwt/generate/: 0.021557347774505617 seconds per request
- jwt/read/: 0.01299025297164917 seconds per request
- sql/insert/: 0.016695375442504882 seconds per request
- sql/select/: 0.015782628059387207 seconds per request
-Average time per request: 0.01675640106201172 seconds
+ jwt/generate/: 0.020502327680587767 seconds per request
+ jwt/read/: 0.01235354781150818 seconds per request
+ sql/insert/: 0.015815123319625854 seconds per request
+ sql/select/: 0.015130118131637574 seconds per request
+Average time per request: 0.015950279235839845 seconds
 ```
 
 **400 requests per endpoint**
@@ -106,25 +106,25 @@ Average time per request: 0.01675640106201172 seconds
 ```
 --- RESULTS ---
 Golang
- jwt/generate/: 0.02097390055656433 seconds per request
- jwt/read/: 0.00946717917919159 seconds per request
- sql/insert/: 0.010075551867485046 seconds per request
- sql/select/: 0.009664133191108704 seconds per request
-Average time per request: 0.012545191198587418 seconds
+ jwt/generate/: 0.022289502024650572 seconds per request
+ jwt/read/: 0.01029155969619751 seconds per request
+ sql/insert/: 0.011018245220184327 seconds per request
+ sql/select/: 0.010410805940628052 seconds per request
+Average time per request: 0.013502528220415115 seconds
 
 JavaScript
- jwt/generate/: 0.01850809872150421 seconds per request
- jwt/read/: 0.01755066156387329 seconds per request
- sql/insert/: 0.0185854172706604 seconds per request
- sql/select/: 0.018144344091415406 seconds per request
-Average time per request: 0.018197130411863327 seconds
+ jwt/generate/: 0.020287936329841615 seconds per request
+ jwt/read/: 0.019038857817649843 seconds per request
+ sql/insert/: 0.02035028338432312 seconds per request
+ sql/select/: 0.019712246656417846 seconds per request
+Average time per request: 0.019847331047058107 seconds
 
 Python
- jwt/generate/: 0.02141772210597992 seconds per request
- jwt/read/: 0.012745919227600098 seconds per request
- sql/insert/: 0.01627397894859314 seconds per request
- sql/select/: 0.01552843689918518 seconds per request
-Average time per request: 0.016491514295339585 seconds
+ jwt/generate/: 0.021781071424484252 seconds per request
+ jwt/read/: 0.01286419689655304 seconds per request
+ sql/insert/: 0.01682237446308136 seconds per request
+ sql/select/: 0.016164163947105407 seconds per request
+Average time per request: 0.016907951682806014 seconds
 ```
 
 ### Start commands for individual services
