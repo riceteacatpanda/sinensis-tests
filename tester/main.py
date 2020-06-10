@@ -84,7 +84,7 @@ for base in tests:
 print("--- RESULTS ---")
 
 for platform in results:
-  print(Style.BRIGHT + Back.WHITE + Fore.BLUE + platform)
+  print(Style.BRIGHT + Fore.BLUE + platform)
   overall_total = 0
   for endpoint in results[platform]:
     print(f" {endpoint}: ", end="")
