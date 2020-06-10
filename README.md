@@ -10,7 +10,7 @@ Tests for the Sinensis API to determine which technology is best to use
 
 ### Methodology
 
-An API is run on the local machine and a Python script runs 50 requests against each endpoint, timing the length of time it takes for each to return. These are then averaged.
+An API is run on the local machine and a Python script concurrently runs multiple requests against each endpoint, timing the length of time it takes for each to return. These are then averaged.
 
 ### Endpoints
 
